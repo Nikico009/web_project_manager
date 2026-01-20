@@ -1,0 +1,74 @@
+WEB PROJECT MANAGER – FUNCTIONAL SPECIFICATION (v1)
+
+OBJECTIVE
+---------
+Develop a simple web application for managing programming projects.
+The application allows creating, viewing, and editing projects stored
+in a shared SQL database accessible by all users.
+
+Authentication or user separation is not implemented in this version.
+
+
+MAIN FUNCTIONALITY
+------------------
+Upon accessing the application:
+
+- A list of all existing projects is displayed.
+- Users can create new projects.
+- Users can edit existing projects.
+- The project list updates automatically when projects are created or modified.
+
+
+DATA MODEL
+----------
+Entity: Project
+
+Fields:
+- id: unique identifier for the project.
+- name: name of the project.
+- language: primary programming language.
+- description: free-text project description.
+- created_at: project creation date.
+
+
+AVAILABLE OPERATIONS
+--------------------
+- Create project
+- List projects
+- Edit project
+
+(Delete operation is not included in this version)
+
+
+GENERAL ARCHITECTURE
+--------------------
+- Backend:
+  - Node.js
+  - Express
+  - SQL database (SQLite)
+
+- Frontend:
+  - HTML
+  - CSS
+  - JavaScript (vanilla, no frameworks)
+
+- Database:
+  - Single local SQLite file
+  - Shared data for all users
+
+
+SCOPE AND LIMITATIONS
+---------------------
+- No login or user accounts.
+- No permission control.
+- No advanced visual design.
+- The focus is on functionality rather than aesthetics.
+- The application is educational and aimed at full-stack learning.
+
+
+LEARNING OBJECTIVES
+-------------------
+- Understand the interaction between frontend, backend, and database.
+- Learn the full CRUD workflow in a real web application.
+- Gain practical experience with HTTP, JSON, and SQL in a real project.
+
