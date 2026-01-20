@@ -1,12 +1,11 @@
-const express = require("express"); // Esto es como el include de c pero me devuelve una clase de "objeto global"
+const express = require("express"); // This is like a C include, but it returns a "global object" class
 
-const app = express(); // Ejecuto el "constructor" de express y llamo a la instancia del "objeto global" app
+const app = express(); // Execute the "constructor" of express and get the instance of the global "app" object
 
-const PORT = 8080; // define
+const PORT = 8080; // define port
 
-// "Middleware"
-app.use(express.json()); // Parseo automaticamente los req q vengan en formato json, y luego puedo acceder a sus "categorías" como "atributos"
-
+// Middleware
+app.use(express.json()); // Automatically parse requests coming in JSON format, then I can access their "fields" like object attributes
 
 // Test Endpoints
 app.get("/test", (req, res) => {
@@ -14,27 +13,25 @@ app.get("/test", (req, res) => {
 })
 
 app.post("/echo_test", (req, res) => {
-  res.send("server recived: " + req.body.msg + "\n");
+  res.send("server received: " + req.body.msg + "\n");
 })
 
 // Post and Get endpoints
 
-let proyectos = []; // Temporary array to store proyects
+let projects = []; // Temporary array to store projects
 
 app.get("/get_prj", (req, res) => {
-  res.send(proyectos + "\n");
+  res.send(projects + "\n");
   console.log("User requested project list");
 })
 
 app.post("/post_prj", (req, res) => {
-  proyectos.push(req.body.prj);
-  res.send("\nserver stored proyect: " + req.body.prj + "\n");
+  projects.push(req.body.prj);
+  res.send("\nserver stored project: " + req.body.prj + "\n");
   console.log("User posted project: " + req.body.prj + "\n");
 })
 
-
-
-
 app.listen(PORT, () => {
-    console.log("Server running on port" + PORT)
+    console.log("Server running on port " + PORT)
 })
+
